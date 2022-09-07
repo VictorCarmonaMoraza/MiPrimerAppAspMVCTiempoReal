@@ -13,10 +13,10 @@ namespace MiPrimerAppAspMVCTiempoReal.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BDCursoEntities1 : DbContext
+    public partial class BDCursoEntities : DbContext
     {
-        public BDCursoEntities1()
-            : base("name=BDCursoEntities1")
+        public BDCursoEntities()
+            : base("name=BDCursoEntities")
         {
         }
     

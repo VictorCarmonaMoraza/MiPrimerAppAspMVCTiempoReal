@@ -190,7 +190,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BDCursoEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BDCursoEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CategoriaCurso" EntityType="Self.CategoriaCurso" />
           <EntitySet Name="Curso" EntityType="Self.Curso" />
           <EntitySet Name="SeccionCurso" EntityType="Self.SeccionCurso" />
@@ -213,7 +213,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BDCursoModelStoreContainer" CdmEntityContainer="BDCursoEntities1">
+        <EntityContainerMapping StorageEntityContainer="BDCursoModelStoreContainer" CdmEntityContainer="BDCursoEntities">
           <EntitySetMapping Name="CategoriaCurso">
             <EntityTypeMapping TypeName="BDCursoModel.CategoriaCurso">
               <MappingFragment StoreEntitySet="CategoriaCurso">

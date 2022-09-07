@@ -17,3 +17,13 @@ function set(id, valor) {
 function setS(id, valor) {
     document.getElementById(id).src = valor;
 }
+
+function pintar(url, id ) {
+
+    fetch(url).then(res => res.json())
+        .then(res => {
+            alert(res)
+            alert(JSON.stringify(res))
+        })
+
+}
