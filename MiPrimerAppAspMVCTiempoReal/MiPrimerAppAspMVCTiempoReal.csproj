@@ -105,7 +105,10 @@
     <Content Include="Global.asax" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\categoriacurso.js" />
+    <Content Include="js\chart.js" />
+    <Content Include="js\datatable.js" />
     <Content Include="js\generic.js" />
+    <Content Include="js\sweetalert.js" />
     <Content Include="Models\BDCurso.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BDCurso.edmx</DependentUpon>
