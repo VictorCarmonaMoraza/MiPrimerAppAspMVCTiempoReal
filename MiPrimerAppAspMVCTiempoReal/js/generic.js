@@ -18,13 +18,13 @@ function setS(id, valor) {
     document.getElementById(id).src = valor;
 }
 
-function pintar(url, id ="divTabla", cabeceras, nombrePropiedades ) {
+function pintar(url, id ="divTabla", cabeceras, nombrePropiedades, idTabla="tabla" ) {
 
     fetch(url).then(res => res.json())
         .then(res => {
             //alert(res)
             //alert(JSON.stringify(res))
-            var contenido = "<table class='table'>";
+            var contenido = "<table id='" + idTabla+"' class='table'>";
             contenido += "<thead>";
             contenido += "<tr>";
             for (var i = 0; i < cabeceras.length; i++) {
@@ -57,6 +57,8 @@ function pintar(url, id ="divTabla", cabeceras, nombrePropiedades ) {
             contenido += "</table>";
 
             document.getElementById(id).innerHTML = contenido;
+            //Agregamos paginado
+            $("#"+idTabla).DataTable()
         })
 
 }
