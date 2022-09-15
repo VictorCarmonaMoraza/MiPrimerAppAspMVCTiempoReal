@@ -11,7 +11,7 @@ namespace MiPrimerAppAspMVCTiempoReal.Controllers
         // GET: Curso
         public ActionResult Index()
         {
-            return View();n
+            return View();
         }
 
         public JsonResult listarCursos()
