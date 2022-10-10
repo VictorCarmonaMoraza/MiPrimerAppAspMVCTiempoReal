@@ -5,6 +5,69 @@ function get(id) {
     return document.getElementById(id).value;
 }
 
+function fetchPost(url, objeto, callback) {
+    Confirmacion(undefined, function () {
+        fetch(url, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify(objeto)
+        }).then(res => res.text())
+            .then(res => {
+                //1(OK)
+                if (res == 1) {
+                    Exito();
+                    callback()
+                } else {
+                    Error();
+                }
+            })
+    });
+
+   
+}
+
+function Error(titulo="Error",texto="Ocurrio un error") {
+    Swal.fire({
+        icon: 'error',
+        title: titulo,
+        text: texto,
+        /*footer: '<a href="">Why do I have this issue?</a>'*/
+    })
+}
+
+function Exito(titulo="Se guardo correctamente") {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: titulo,
+        showConfirmButton: false,
+        timer: 1500
+    })
+}
+
+function Confirmacion(texto="Los cambios tu deseas guardarlos en tu BD", callback) {
+    Swal.fire({
+        title: 'Desea guardar los cambios?',
+        text: texto,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                //'Deleted!',
+                //'Your file has been deleted.',
+                //'success'
+                callback()
+            )
+        }
+    })
+}
+
 //image (img)
 function getS(id) {
     return document.getElementById(id).src;

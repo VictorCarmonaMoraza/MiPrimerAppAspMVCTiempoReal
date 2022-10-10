@@ -5,11 +5,34 @@
 
 <h2>Categoria Curso</h2>
 
+<fieldset class="mb-3">
+    <legend>Informacion de Categoria Curso</legend>
+    <div class="mb-3">
+        <label class="form-label">Id Categoria Curso</label>
+        <input readonly type="text" id="txtidcurso"  class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ingrese Nombre Categoria Curso</label>
+        <input type="text" id="txtnombrecategoria" class="form-control" placeholder="Ingrese Nombre categoria" />
+    </div>
+    
+    <!--Botones-->
+    <div class="mb-3">
+        <button class="btn btn-success"> Guardar</button>
+        <button class="btn btn-danger">Limpiar</button>
+        @*<button class="btn btn-danger" onclick="Error()">Error</button>
+        <button class="btn btn-danger" onclick="Exito()">Exito</button>
+        <button class="btn btn-danger" onclick="Confirmacion()">Confirmacion</button>*@
+    </div>
+
+</fieldset>
+
 <div id="divTabla">
 
 </div>
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/js/datatable.js"></script>
+<script src="~/js/sweetalert.js"></script>
 <script src="~/js/generic.js"></script>
 <script src="~/js/categoriacurso.js"></script>

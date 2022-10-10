@@ -18,6 +18,27 @@ namespace MiPrimerAppAspMVCTiempoReal.Controllers
             return View();
         }
 
+        public int GuardarDatos(CategoriaCursoCLS obj)
+        {
+            int rpta = 0;
+            try
+            {
+                using(BDCursoEntities bd =new BDCursoEntities())
+                {
+                    CategoriaCurso oCategoriaCurso = new CategoriaCurso();
+                    oCategoriaCurso.NOMBRE = obj.Nombre;
+                    bd.CategoriaCurso.Add(oCategoriaCurso);
+                    rpta = 1;
+                }
+            }
+            catch(Exception ex)
+            {
+                rpta = 0;
+            }
+
+            return rpta;
+        }
+
         public JsonResult listarCategoriaCurso()
         {
             //Inicializamos la lista
